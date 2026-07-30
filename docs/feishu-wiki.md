@@ -36,7 +36,7 @@ feishu-wiki download "量潮数据档案" output/
 
 ### 2. judge — 审阅文档
 
-三种模式：
+四种模式：
 
 ```bash
 # interactive — 逐篇判断
@@ -90,15 +90,64 @@ feishu-wiki delete judge_manifest.json --tree tree.json --filter keep
 - `--filter` — 判断类型过滤（默认: keep,delete）
 - `--result` — 结果输出（默认: delete_result.json）
 
+### 4. validate — 验证资产
+
+根据 `contract.yaml` 契约，对已下载的知识库执行声明式验证。
+
+支持两种验证模式：
+
+| 模式 | 说明 |
+|------|------|
+| `ATOMIC` | 空间必须包含指定的必需分类（如"议题/议程/决策/计划"） |
+| `SCOPED` | 空间存在即可 |
+
+```bash
+# 使用默认契约文件
+feishu-wiki validate --tree output/nodes.json
+
+# 指定自定义契约
+feishu-wiki validate --tree output/nodes.json --contract my-contract.yaml
+```
+
+输出：控制台报告 + `validate_report.json`
+
+### 5. 契约文件 (contract.yaml)
+
+验证策略定义在 YAML 文件中：
+
+```yaml
+spec_version: 0.0.4
+validation:
+  policies:
+    - selector: "议事档案"
+      mode: ATOMIC
+      required_categories:
+        - 议题
+        - 议程
+        - 决策
+        - 计划
+    - selector: "**"
+      mode: SCOPED
+```
+
 ## 完整工作流
 
 ```bash
-# 1. 下载
+# 1. 下载知识库
 feishu-wiki download "知识库名称" output/
 
-# 2. 审阅
+# 2. 验证资产结构
+feishu-wiki validate --tree output/nodes.json
+
+# 3. 审阅文档
 feishu-wiki judge --tree output/nodes.json --dir output/
 
-# 3. 删除飞书源文
+# 4. 删除飞书源文档
 feishu-wiki delete judge_manifest.json --tree output/nodes.json
 ```
+
+## 参考文档
+
+- [数据档案业务分析](数据档案业务分析.md) — 对"数据档案"Space 的完整业务分析
+- [验证规则建模](验证规则建模.md) — 从资产结构反推业务流程的建模方法
+- [议事档案标本说明](议事档案标本说明.md) — 对"议事档案"Space 的标本分析

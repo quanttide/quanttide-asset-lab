@@ -2,6 +2,7 @@ mod delete;
 mod download;
 mod judge;
 mod lark;
+mod validate;
 
 use clap::{Parser, Subcommand};
 
@@ -20,6 +21,8 @@ enum Command {
     Judge(judge::Args),
     /// 根据 manifest 删除飞书源文档
     Delete(delete::Args),
+    /// 根据契约验证已下载的知识库
+    Validate(validate::Args),
 }
 
 fn main() -> anyhow::Result<()> {
@@ -28,5 +31,6 @@ fn main() -> anyhow::Result<()> {
         Command::Download(args) => download::run(args),
         Command::Judge(args) => judge::run(args),
         Command::Delete(args) => delete::run(args),
+        Command::Validate(args) => validate::run(args),
     }
 }

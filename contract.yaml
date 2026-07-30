@@ -1,0 +1,34 @@
+# 飞书 Wiki 资产契约
+
+spec_version: 0.0.4
+
+# 验证配置
+validation:
+  policies:
+
+    # 议事档案 - 原子治理
+    # 契约声明的 space 必须存在，且包含指定分类
+    - selector: "议事档案"
+      mode: ATOMIC
+      required_categories:
+        - 议题
+        - 议程
+        - 决策
+        - 计划
+
+    # 协作档案 - 原子治理
+    - selector: "协作档案"
+      mode: ATOMIC
+      required_categories:
+        - 任务管理
+
+    # 图书馆 - 原子治理
+    - selector: "图书馆"
+      mode: ATOMIC
+      required_categories:
+        - 编程语言
+
+    # 其他 Space - 范围治理
+    # 只要 space 存在即可
+    - selector: "**"
+      mode: SCOPED
