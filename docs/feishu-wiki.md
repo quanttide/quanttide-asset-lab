@@ -148,6 +148,4 @@ feishu-wiki delete judge_manifest.json --tree output/nodes.json
 
 ## 参考文档
 
-- [数据档案业务分析](数据档案业务分析.md) — 对"数据档案"Space 的完整业务分析
-- [验证规则建模](验证规则建模.md) — 从资产结构反推业务流程的建模方法
-- [议事档案标本说明](议事档案标本说明.md) — 对"议事档案"Space 的标本分析
+实验资料已迁至归档站：[quanttide-archive-of-asset-management/quanttide-asset-lab](https://github.com/quanttide/quanttide-archive-of-asset-management/tree/main/quanttide-asset-lab)
