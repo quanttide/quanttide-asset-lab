@@ -72,4 +72,4 @@ local 是默认模式，创建本地 bare 仓库；需要操作公开 GitHub 时
 - `docs/index.md` 中 `scripts/engine.py` 与三个 `references/` 链接均已失效；
 - `assets/specification.yaml` 的 `runtime.entrypoint` 仍写着 `scripts/engine.py`。
 
-此外尚无 `pyproject.toml`、包入口与控制台命令，本目录是源码树而非可安装的 Python 项目。改造计划见 [ROADMAP.md](./ROADMAP.md)。
+此外尚无 `pyproject.toml`、包入口与控制台命令，本目录是源码树而非可安装的 Python 项目。改造计划见 [ROADMAP.md](docs/dev-guide/roadmap.md)。
