@@ -24,7 +24,7 @@
 - 资产第二大脑命名为 `quanttide-{资产类型}`；
 - 双轴交点命名为 `quanttide-{资产类型}-of-{领域英文名}`；
 - 产品平台使用 `qt{产品名}`，云平台使用 `qtcloud-{产品名}`；
-- 工具集使用 `quanttide-{领域短名}-toolkit`；
+- 标准库使用 `quanttide-{领域短名}-toolkit`；
 - 实验室使用 `quanttide-laboratory-of-{领域英文名}`。
 
 ## 命名规则
@@ -44,7 +44,7 @@
 | 顶级目录 | 标准坐标 |
 |---|---|
 | apps | 应用云与已有产品 |
-| packages | 工具集 |
+| packages | 标准库 |
 | examples | default 实验室 |
 | data | context、archive、report、library、history、journal、profile、brochure、roadmap、insight、intention |
 | docs | bylaw、specification、handbook、gallery、tutorial、essay |

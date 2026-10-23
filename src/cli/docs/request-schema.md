@@ -21,7 +21,7 @@ domain:
 register_root: true
 ```
 
-标准新建含领域、应用云、工具集、实验室、Context、Journal 和 Intention 七个仓库。local 模式若没有总入口，还会创建第八个根仓库作为测试环境；GitHub 模式默认要求总入口已经存在。首次新建个人测试入口时显式设置 `new_root: true`，该名称必须不存在；后续追加领域用同一 `root_repo` 并设置 `new_root: false`。
+标准新建含领域、应用云、标准库、实验室、Context、Journal 和 Intention 七个仓库。local 模式若没有总入口，还会创建第八个根仓库作为测试环境；GitHub 模式默认要求总入口已经存在。首次新建个人测试入口时显式设置 `new_root: true`，该名称必须不存在；后续追加领域用同一 `root_repo` 并设置 `new_root: false`。
 
 `new_repositories_only: true` 仅用于新建领域，要求除总入口以外的目标仓库不存在，发现同名（包括空仓库）时停止，不自动复用。UI 0.5.0 默认启用。CLI 未设置时保留既有场景行为，维护者须审阅复用范围。GitHub 的不可见资源不能被断言为不存在；新建请求由 GitHub 原子地拒绝实际重名，创建失败后不会退回到复用已有仓库。
 
